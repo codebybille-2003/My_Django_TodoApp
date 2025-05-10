@@ -1,0 +1,11 @@
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <label for="">Task</label>
+    <input type="text" name="tname" value="{{task.name}}"> <br><br>
+    
+    
+    <label for="">Desc</label>
+    <input type="text" name="tdesc" value="{{task.desc}}"> <br><br>
+    <button >Add Task</button>
+</form>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>Form</h1>
+    <h1>To-Do list App</h1>
+</div>
+<section>{% include 'form.html' %} <br>
+    <table rules="all"  width="400px" cellpadding="3px" cellspacing="3px">
+        <thead>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Option</th>
+        </thead>
+    {% for task in task %}
+    
+        
+        <tbody>
+            <tr>
+                 <!-- <td><h1><a href="{% url 'task' task.id %}">{{task.name}}</a></h1></td>  -->
+                 <td><h3>{{task.name}}</h3></td> 
+                <td>{{task.desc}}</td>
+                <td><button><a href="{% url 'edit' task.id %}">Edit</a></button> 
+                    <button><a href="{% url 'delete' task.id %}">Delete</a></button>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    
+    
+        {% endblock %}
+    </section>
