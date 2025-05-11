@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: django-web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn todolist.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: yourprojectname.settings
